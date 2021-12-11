@@ -223,6 +223,6 @@ with:
   
 Enable below modules :
 
-$ sudo lighty-enable-mod fastcgi \n
-$ sudo lighty-enable-mod fastcgi-php \n
+$ sudo lighty-enable-mod fastcgi;
+$ sudo lighty-enable-mod fastcgi-php;
 $ sudo service lighttpd force-reload
