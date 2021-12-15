@@ -34,21 +34,21 @@ brief explications :
 
 installing ssh :
 
-$ sudo apt-get update
-$ sudo apt install openssh-server
+* $ sudo apt-get update
+* $ sudo apt install openssh-server
 
 Check the SSH server status :
 
-$ sudo systemctl status ssh
+* $ sudo systemctl status ssh
 
 Restart the SSH service :
 
-$ service ssh restart
+* $ service ssh restart
 
 Changing default port (22) to 4242 :
 
-sudo vi etc/ssh/sshd_config
-sudo vi etc/ssh/ssh_config
+* sudo vi etc/ssh/sshd_config
+* sudo vi etc/ssh/ssh_config
 
 # UFW (Uncomplicated Firewall)
 
@@ -58,33 +58,33 @@ UFW is a new simplified command line configuration tool from Netfilter, which pr
 
 Enable :
 
-$ sudo ufw enable
+* $ sudo ufw enable
 
 Check the status :
 
-$ Check the status (numbered)
+* $ Check the status (numbered)
 
 Configure the port rules
 
-$ sudo ufw allow ...
+* $ sudo ufw allow ...
 
 # SUDO
 
 Login as root
 
-$ su -
+* $ su -
 
 Install sudo
 
-$ apt-get update -y
-$ apt-get upgrade -y
-$ apt install sudo
+* $ apt-get update -y
+* $ apt-get upgrade -y
+* $ apt install sudo
 
 # Passworld Policy
 
 Installing password quality checking library (libpam-pwquality):
 
-$ sudo apt-get install libpam-pwquality
+* $ sudo apt-get install libpam-pwquality
 
 # MONITORING SCRIPT :
 
@@ -94,33 +94,33 @@ crontab file who contains rules for cron daemon. This is a task scheduler ("run 
 
 Install cron :
 
-$ apt-get cron
+* $ apt-get cron
 
 Edit cron in order to run script as root :
 
-sudo crontab -u root -e
+* $ sudo crontab -u root -e
 
 To write in the crontab file, schedule the script for every 10 minutes :
 
-*/10 * * * * sh /path/monitoring.sh
+* */10 * * * * sh /path/monitoring.sh
 
 # Bonus Part :
 
 Installing Lighttpd :
 
-$ sudo apt install lighttpd 
+* $ sudo apt install lighttpd 
 
 Allow incoming connections :
 
-$ sudo ufw allow 80
+* $ sudo ufw allow 80
 
 Installing & Configuring MariaDB :
 
-$ sudo apt install mariadb-server
+* $ sudo apt install mariadb-server
 
 Start interactive script to remove insecure default settings :
 
-$ sudo mysql_secure_installation
+* $ sudo mysql_secure_installation
 Enter current password for root (enter for none): #Just press Enter
 Set root password? [Y/n] n
 Remove anonymous users? [Y/n] Y
@@ -130,35 +130,35 @@ Reload privilege tables now? [Y/n] Y
 
 Log in to the MariaDB console :
 
-$ sudo mariadb
+* $ sudo mariadb
 MariaDB [(none)]>
 
 Create new database :
 
-*MariaDB [(none)]> CREATE DATABASE <database-name>;
+* MariaDB [(none)]> CREATE DATABASE <database-name>;
   
 Create new database user and grant them full privileges :
 
-*MariaDB [(none)]> GRANT ALL ON <database-name>.* TO '<username>'@'localhost' IDENTIFIED BY '<password>' WITH GRANT OPTION;
+* MariaDB [(none)]> GRANT ALL ON <database-name>.* TO '<username>'@'localhost' IDENTIFIED BY '<password>' WITH GRANT OPTION;
   
-*Flush the privileges :
+* Flush the privileges :
 
-*MariaDB [(none)]> FLUSH PRIVILEGES;
+* MariaDB [(none)]> FLUSH PRIVILEGES;
  
 Exit the MariaDB :
 
-*MariaDB [(none)]> exit
+* MariaDB [(none)]> exit
   
 Verify whether database user was successfully created :
 
-*$ mariadb -u <username> -p
+* $ mariadb -u <username> -p
 Enter password: <password>
 
-*MariaDB [(none)]>
+* MariaDB [(none)]>
 
 Confirm whether database :
   
-*MariaDB [(none)]> SHOW DATABASES;
+* MariaDB [(none)]> SHOW DATABASES;
 +--------------------+
 | Database           |
 +--------------------+
@@ -167,47 +167,47 @@ Confirm whether database :
 +--------------------+
 Exit the MariaDB :
 
-*MariaDB [(none)]> exit;
+* MariaDB [(none)]> exit;
   
 # Installing PHP
   
 Install php-cgi & php-mysql :
  
-*$ sudo apt install php-cgi php-mysql
+* $ sudo apt install php-cgi php-mysql
   
 Downloading & Configuring WordPress :
   
 Install wget :
 
-$ sudo apt install wget
+* $ sudo apt install wget
   
 Download WordPress to /var/www/html :
   
-$ sudo wget http://wordpress.org/latest.tar.gz -P /var/www/html
+* $ sudo wget http://wordpress.org/latest.tar.gz -P /var/www/html
     
 Extract downloaded content :
 
-$ sudo tar -xzvf /var/www/html/latest.tar.gz
+* $ sudo tar -xzvf /var/www/html/latest.tar.gz
 
 Remove tarball :
 
-$ sudo rm /var/www/html/latest.tar.gz
+* $ sudo rm /var/www/html/latest.tar.gz
 
 Copy content of /var/www/html/wordpress to /var/www/html :
 
-$ sudo cp -r /var/www/html/wordpress/* /var/www/html
+* $ sudo cp -r /var/www/html/wordpress/* /var/www/html
 
 Remove /var/www/html/wordpress :
 
-$ sudo rm -rf /var/www/html/wordpress
+* $ sudo rm -rf /var/www/html/wordpress
 
 Create WordPress configuration file from its sample :
 
-$ sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
+* $ sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
   
 Configure WordPress to reference previously-created MariaDB database & user :
 
-$ sudo vi /var/www/html/wp-config.php
+* $ sudo vi /var/www/html/wp-config.php
 
 Replace the below
 
