@@ -135,30 +135,30 @@ MariaDB [(none)]>
 
 Create new database :
 
-MariaDB [(none)]> CREATE DATABASE <database-name>;
+*MariaDB [(none)]> CREATE DATABASE <database-name>;
   
 Create new database user and grant them full privileges :
 
-MariaDB [(none)]> GRANT ALL ON <database-name>.* TO '<username>'@'localhost' IDENTIFIED BY '<password>' WITH GRANT OPTION;
+*MariaDB [(none)]> GRANT ALL ON <database-name>.* TO '<username>'@'localhost' IDENTIFIED BY '<password>' WITH GRANT OPTION;
   
-Flush the privileges :
+*Flush the privileges :
 
-MariaDB [(none)]> FLUSH PRIVILEGES;
+*MariaDB [(none)]> FLUSH PRIVILEGES;
  
 Exit the MariaDB :
 
-MariaDB [(none)]> exit
+*MariaDB [(none)]> exit
   
 Verify whether database user was successfully created :
 
-$ mariadb -u <username> -p
+*$ mariadb -u <username> -p
 Enter password: <password>
 
-MariaDB [(none)]>
+*MariaDB [(none)]>
 
 Confirm whether database :
   
-MariaDB [(none)]> SHOW DATABASES;
+*MariaDB [(none)]> SHOW DATABASES;
 +--------------------+
 | Database           |
 +--------------------+
@@ -167,13 +167,13 @@ MariaDB [(none)]> SHOW DATABASES;
 +--------------------+
 Exit the MariaDB :
 
-MariaDB [(none)]> exit;
+*MariaDB [(none)]> exit;
   
-Installing PHP
+# Installing PHP
   
 Install php-cgi & php-mysql :
  
-$ sudo apt install php-cgi php-mysql
+*$ sudo apt install php-cgi php-mysql
   
 Downloading & Configuring WordPress :
   
@@ -211,13 +211,13 @@ $ sudo vi /var/www/html/wp-config.php
 
 Replace the below
 
-23 define( 'DB_NAME', 'database_name_here' );
-26 define( 'DB_USER', 'username_here' );
-29 define( 'DB_PASSWORD', 'password_here' );
+*23 define( 'DB_NAME', 'database_name_here' );
+*26 define( 'DB_USER', 'username_here' );
+*29 define( 'DB_PASSWORD', 'password_here' );
 with:
-23 define( 'DB_NAME', '<database-name>' );
-26 define( 'DB_USER', '<username>' );
-29 define( 'DB_PASSWORD', '<password>' );
+*23 define( 'DB_NAME', '<database-name>' );
+*26 define( 'DB_USER', '<username>' );
+*29 define( 'DB_PASSWORD', '<password>' );
 
 # Configuring Lighttpd
   
