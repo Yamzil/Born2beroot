@@ -211,13 +211,13 @@ $ sudo vi /var/www/html/wp-config.php
 
 Replace the below
 
-*23 define( 'DB_NAME', 'database_name_here' );
-*26 define( 'DB_USER', 'username_here' );
-*29 define( 'DB_PASSWORD', 'password_here' );
+* 23 define( 'DB_NAME', 'database_name_here' );
+* 26 define( 'DB_USER', 'username_here' );
+* 29 define( 'DB_PASSWORD', 'password_here' );
 with:
-*23 define( 'DB_NAME', '<database-name>' );
-*26 define( 'DB_USER', '<username>' );
-*29 define( 'DB_PASSWORD', '<password>' );
+* 23 define( 'DB_NAME', '<database-name>' );
+* 26 define( 'DB_USER', '<username>' );
+* 29 define( 'DB_PASSWORD', '<password>' );
 
 # Configuring Lighttpd
   
